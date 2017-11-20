@@ -59,6 +59,8 @@ public class Cadastro extends javax.swing.JFrame {
         jbExcluirEndereco = new javax.swing.JButton();
         jtCep = new javax.swing.JTextField();
         jbSalvarEndereco = new javax.swing.JButton();
+        jtIdEndereco = new javax.swing.JTextField();
+        jlIdEndereco = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jlNomePerfil = new javax.swing.JLabel();
         jtNomePerfil = new javax.swing.JTextField();
@@ -68,6 +70,8 @@ public class Cadastro extends javax.swing.JFrame {
         jbAlterarPerfil = new javax.swing.JButton();
         jbExcluirPerfil = new javax.swing.JButton();
         jbSelecionarPerfil = new javax.swing.JButton();
+        jtIdPerfil = new javax.swing.JTextField();
+        jlIdPerfil = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -119,6 +123,10 @@ public class Cadastro extends javax.swing.JFrame {
                         .addGap(26, 26, 26)
                         .addComponent(jtNome))
                     .addGroup(jpUsuarioLayout.createSequentialGroup()
+                        .addComponent(jlSobrenome)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jtSobrenome))
+                    .addGroup(jpUsuarioLayout.createSequentialGroup()
                         .addGroup(jpUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jbSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jbAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -127,18 +135,17 @@ public class Cadastro extends javax.swing.JFrame {
                                 .addComponent(jbExcluir, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGap(0, 68, Short.MAX_VALUE))
                     .addGroup(jpUsuarioLayout.createSequentialGroup()
-                        .addGroup(jpUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jlSobrenome)
-                            .addComponent(jlIdUsuario))
+                        .addComponent(jlIdUsuario)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jpUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jtIdUsuario)
-                            .addComponent(jtSobrenome)))))
+                        .addComponent(jtIdUsuario))))
         );
         jpUsuarioLayout.setVerticalGroup(
             jpUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpUsuarioLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addGroup(jpUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jlIdUsuario)
+                    .addComponent(jtIdUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(8, 8, 8)
                 .addGroup(jpUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlNome)
                     .addComponent(jtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -146,11 +153,7 @@ public class Cadastro extends javax.swing.JFrame {
                 .addGroup(jpUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlSobrenome)
                     .addComponent(jtSobrenome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jpUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jtIdUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jlIdUsuario))
-                .addGap(14, 14, 14)
+                .addGap(45, 45, 45)
                 .addComponent(jbSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jbAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -174,6 +177,11 @@ public class Cadastro extends javax.swing.JFrame {
         jlCep.setText("CEP");
 
         jbSelecionarEndereco.setText("Selecionar");
+        jbSelecionarEndereco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbSelecionarEnderecoActionPerformed(evt);
+            }
+        });
 
         jbAlterarEndereco.setText("Alterar");
         jbAlterarEndereco.addActionListener(new java.awt.event.ActionListener() {
@@ -183,6 +191,11 @@ public class Cadastro extends javax.swing.JFrame {
         });
 
         jbExcluirEndereco.setText("Excluir");
+        jbExcluirEndereco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbExcluirEnderecoActionPerformed(evt);
+            }
+        });
 
         jbSalvarEndereco.setText("Salvar");
         jbSalvarEndereco.addActionListener(new java.awt.event.ActionListener() {
@@ -190,6 +203,8 @@ public class Cadastro extends javax.swing.JFrame {
                 jbSalvarEnderecoActionPerformed(evt);
             }
         });
+
+        jlIdEndereco.setText("ID Endereço");
 
         javax.swing.GroupLayout jpEnderecoLayout = new javax.swing.GroupLayout(jpEndereco);
         jpEndereco.setLayout(jpEnderecoLayout);
@@ -218,9 +233,13 @@ public class Cadastro extends javax.swing.JFrame {
                                 .addComponent(jtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jpEnderecoLayout.createSequentialGroup()
-                                .addComponent(jlLogradouro)
+                                .addGroup(jpEnderecoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jlLogradouro)
+                                    .addComponent(jlIdEndereco))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jtLogradouro)))
+                                .addGroup(jpEnderecoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jtIdEndereco)
+                                    .addComponent(jtLogradouro))))
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpEnderecoLayout.createSequentialGroup()
                         .addGroup(jpEnderecoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -235,7 +254,10 @@ public class Cadastro extends javax.swing.JFrame {
         jpEnderecoLayout.setVerticalGroup(
             jpEnderecoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpEnderecoLayout.createSequentialGroup()
-                .addGap(43, 43, 43)
+                .addGroup(jpEnderecoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jtIdEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jlIdEndereco))
+                .addGap(23, 23, 23)
                 .addGroup(jpEnderecoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jlLogradouro)
                     .addComponent(jtLogradouro, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -263,7 +285,7 @@ public class Cadastro extends javax.swing.JFrame {
                 .addComponent(jbExcluirEndereco)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jbSelecionarEndereco)
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Perfil"));
@@ -280,10 +302,27 @@ public class Cadastro extends javax.swing.JFrame {
         });
 
         jbAlterarPerfil.setText("Alterar");
+        jbAlterarPerfil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbAlterarPerfilActionPerformed(evt);
+            }
+        });
 
         jbExcluirPerfil.setText("Excluir");
+        jbExcluirPerfil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbExcluirPerfilActionPerformed(evt);
+            }
+        });
 
         jbSelecionarPerfil.setText("Selecionar");
+        jbSelecionarPerfil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbSelecionarPerfilActionPerformed(evt);
+            }
+        });
+
+        jlIdPerfil.setText("ID Perfil");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -292,10 +331,6 @@ public class Cadastro extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jlNomePerfil)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jtNomePerfil))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jlDescricao)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -306,13 +341,25 @@ public class Cadastro extends javax.swing.JFrame {
                             .addComponent(jbAlterarPerfil, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jbExcluirPerfil, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jbSelecionarPerfil, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE))
-                        .addGap(0, 77, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jlNomePerfil)
+                            .addComponent(jlIdPerfil))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jtNomePerfil)
+                            .addComponent(jtIdPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(7, 7, 7)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jtIdPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jlIdPerfil))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlNomePerfil)
                     .addComponent(jtNomePerfil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -359,29 +406,46 @@ public class Cadastro extends javax.swing.JFrame {
     private void jbSelecionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSelecionarActionPerformed
         DaoUsuario dao = new DaoUsuario();
         List<Usuario> lista;
-        
+
         lista = dao.buscarUsuario();
         for (Usuario usuario : lista) {
             jtNome.setText(usuario.getNome());
             jtSobrenome.setText(usuario.getSobrenome());
-            jtcodigo.setText(String.valueOf(usuario.getId_usuario()));
-		}
-		
+            jtIdUsuario.setText(String.valueOf(usuario.getId_usuario()));
+        }
+
 
     }//GEN-LAST:event_jbSelecionarActionPerformed
-    
+
     private void jbSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalvarActionPerformed
         Usuario usuario = new Usuario();
         DaoUsuario Dao = new DaoUsuario();
         usuario.setNome(jtNome.getText());
         usuario.setSobrenome(jtSobrenome.getText());
         Dao.salvarUsuario(usuario);
-
+        jtNome.setText("");
+        jtSobrenome.setText("");
+        jtIdUsuario.setText("");
 
     }//GEN-LAST:event_jbSalvarActionPerformed
 
     private void jbAlterarEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAlterarEnderecoActionPerformed
-        // TODO add your handling code here:
+        Endereco endereco = new Endereco();
+        DaoEndereco dao = new DaoEndereco();
+        endereco.setBairro(jtBairro.getText());
+        endereco.setCep(jtCep.getText());
+        endereco.setComplemento(jtComplemento.getText());
+        endereco.setLogradouro(jtLogradouro.getText());
+        endereco.setNumero(jtNumero.getText());
+        endereco.setId_endereco(Integer.parseInt(jtIdEndereco.getText()));
+        dao.alterarEndereco(endereco);
+        jtNumero.setText("");
+        jtLogradouro.setText("");
+        jtComplemento.setText("");
+        jtCep.setText("");
+        jtBairro.setText("");
+        jtIdEndereco.setText("");
+
     }//GEN-LAST:event_jbAlterarEnderecoActionPerformed
 
     private void jbSalvarEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalvarEnderecoActionPerformed
@@ -394,6 +458,12 @@ public class Cadastro extends javax.swing.JFrame {
         endereco.setNumero(jtNumero.getText());
 
         Dao.salvarEndereco(endereco);
+        jtNumero.setText("");
+        jtLogradouro.setText("");
+        jtComplemento.setText("");
+        jtCep.setText("");
+        jtBairro.setText("");
+        jtIdEndereco.setText("");
 // TODO add your handling code here:
     }//GEN-LAST:event_jbSalvarEnderecoActionPerformed
 
@@ -403,24 +473,103 @@ public class Cadastro extends javax.swing.JFrame {
         perfil.setNome(jtNomePerfil.getText());
         perfil.setDescricao(jtDescricao.getText());
         Dao.salvarPerfil(perfil);
+        jtNomePerfil.setText("");
+        jtDescricao.setText("");
+        jtIdPerfil.setText("");
+
 
     }//GEN-LAST:event_jbSalvarPerfilActionPerformed
 
     private void jbAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAlterarActionPerformed
         Usuario usuario = new Usuario();
-       DaoUsuario dao = new DaoUsuario();
-       usuario.setNome(jtNome.getText());
-       usuario.setSobrenome(jtSobrenome.getText());
-       usuario.setId_usuario(Integer.parseInt(jtcodigo.getText()));
-       dao.alterarUsuario(usuario);
+        DaoUsuario dao = new DaoUsuario();
+        usuario.setNome(jtNome.getText());
+        usuario.setSobrenome(jtSobrenome.getText());
+        usuario.setId_usuario(Integer.parseInt(jtIdUsuario.getText()));
+        dao.alterarUsuario(usuario);
+        jtNome.setText("");
+        jtSobrenome.setText("");
+        jtIdUsuario.setText("");
     }//GEN-LAST:event_jbAlterarActionPerformed
 
     private void jbExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExcluirActionPerformed
         Usuario usuario = new Usuario();
         DaoUsuario Dao = new DaoUsuario();
-        usuario.setId_usuario(Integer.parseInt(jtcodigo.getText()));
+        usuario.setId_usuario(Integer.parseInt(jtIdUsuario.getText()));
         Dao.excluirUsuario(usuario.getId_usuario());
+        jtNome.setText("");
+        jtSobrenome.setText("");
+        jtIdUsuario.setText("");
     }//GEN-LAST:event_jbExcluirActionPerformed
+
+    private void jbSelecionarPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSelecionarPerfilActionPerformed
+        DaoPerfil dao = new DaoPerfil();
+        List<Perfil> lista;
+
+        lista = dao.buscarPerfil();
+        for (Perfil perfil : lista) {
+            jtNomePerfil.setText(perfil.getNome());
+            jtDescricao.setText(perfil.getDescricao());
+
+            jtIdPerfil.setText(String.valueOf(perfil.getId_perfil()));
+        }
+
+
+    }//GEN-LAST:event_jbSelecionarPerfilActionPerformed
+
+    private void jbSelecionarEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSelecionarEnderecoActionPerformed
+        DaoEndereco dao = new DaoEndereco();
+        List<Endereco> lista;
+
+        lista = dao.buscarEndereco();
+        for (Endereco endereco : lista) {
+            jtBairro.setText(endereco.getBairro());
+            jtCep.setText(endereco.getCep());
+             jtNumero.setText(endereco.getNumero());
+              jtComplemento.setText(endereco.getComplemento());
+              jtLogradouro.setText(endereco.getLogradouro());
+            jtIdEndereco.setText(String.valueOf(endereco.getId_endereco()));
+        }
+
+
+    }//GEN-LAST:event_jbSelecionarEnderecoActionPerformed
+
+    private void jbAlterarPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAlterarPerfilActionPerformed
+        Perfil perfil = new Perfil();
+        DaoPerfil dao = new DaoPerfil();
+        perfil.setNome(jtNomePerfil.getText());
+        perfil.setDescricao(jtDescricao.getText());
+        perfil.setId_perfil(Integer.parseInt(jtIdPerfil.getText()));
+        dao.alterarPerfil(perfil);
+        jtNomePerfil.setText("");
+        jtDescricao.setText("");
+        jtIdPerfil.setText("");
+
+
+    }//GEN-LAST:event_jbAlterarPerfilActionPerformed
+
+    private void jbExcluirEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExcluirEnderecoActionPerformed
+        Endereco endereco = new Endereco();
+        DaoEndereco Dao = new DaoEndereco();
+        endereco.setId_endereco(Integer.parseInt(jtIdEndereco.getText()));
+        Dao.excluirEndereco(endereco.getId_endereco());
+        jtNumero.setText("");
+        jtLogradouro.setText("");
+        jtComplemento.setText("");
+        jtCep.setText("");
+        jtBairro.setText("");
+        jtIdEndereco.setText("");
+    }//GEN-LAST:event_jbExcluirEnderecoActionPerformed
+
+    private void jbExcluirPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExcluirPerfilActionPerformed
+        Perfil perfil = new Perfil();
+        DaoPerfil Dao = new DaoPerfil();
+        perfil.setId_perfil(Integer.parseInt(jtIdPerfil.getText()));
+        Dao.excluirPerfil(perfil.getId_perfil());
+        jtNomePerfil.setText("");
+        jtDescricao.setText("");
+        jtIdPerfil.setText("");
+    }//GEN-LAST:event_jbExcluirPerfilActionPerformed
 
     /**
      * @param args the command line arguments
@@ -475,6 +624,8 @@ public class Cadastro extends javax.swing.JFrame {
     private javax.swing.JLabel jlCep;
     private javax.swing.JLabel jlComplemento;
     private javax.swing.JLabel jlDescricao;
+    private javax.swing.JLabel jlIdEndereco;
+    private javax.swing.JLabel jlIdPerfil;
     private javax.swing.JLabel jlIdUsuario;
     private javax.swing.JLabel jlLogradouro;
     private javax.swing.JLabel jlNome;
@@ -487,6 +638,8 @@ public class Cadastro extends javax.swing.JFrame {
     private javax.swing.JTextField jtCep;
     private javax.swing.JTextField jtComplemento;
     private javax.swing.JTextField jtDescricao;
+    private javax.swing.JTextField jtIdEndereco;
+    private javax.swing.JTextField jtIdPerfil;
     private javax.swing.JTextField jtIdUsuario;
     private javax.swing.JTextField jtLogradouro;
     private javax.swing.JTextField jtNome;

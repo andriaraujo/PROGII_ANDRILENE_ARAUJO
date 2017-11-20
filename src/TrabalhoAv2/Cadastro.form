@@ -59,13 +59,18 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
+              <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jlNome" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                           <Component id="jtNome" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="jlSobrenome" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jtSobrenome" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -79,15 +84,9 @@
                           <EmptySpace min="0" pref="68" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jlSobrenome" min="-2" max="-2" attributes="0"/>
-                              <Component id="jlIdUsuario" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="jlIdUsuario" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jtIdUsuario" max="32767" attributes="0"/>
-                              <Component id="jtSobrenome" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="jtIdUsuario" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -96,7 +95,11 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jlIdUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtIdUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jlNome" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jtNome" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -106,12 +109,7 @@
                       <Component id="jlSobrenome" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jtSobrenome" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jtIdUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jlIdUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                   <Component id="jbSalvar" min="-2" pref="23" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jbAlterar" min="-2" pref="23" max="-2" attributes="0"/>
@@ -219,9 +217,15 @@
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jlLogradouro" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jlLogradouro" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jlIdEndereco" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jtLogradouro" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jtIdEndereco" max="32767" attributes="0"/>
+                                      <Component id="jtLogradouro" max="32767" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -245,7 +249,11 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jtIdEndereco" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jlIdEndereco" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="jlLogradouro" min="-2" max="-2" attributes="0"/>
                       <Component id="jtLogradouro" min="-2" pref="20" max="-2" attributes="0"/>
@@ -278,7 +286,7 @@
                   <Component id="jbExcluirEndereco" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jbSelecionarEndereco" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="67" max="32767" attributes="0"/>
+                  <EmptySpace pref="70" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -321,6 +329,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Selecionar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbSelecionarEnderecoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jbAlterarEndereco">
           <Properties>
@@ -334,6 +345,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Excluir"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbExcluirEnderecoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="jtCep">
         </Component>
@@ -344,6 +358,13 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbSalvarEnderecoActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtIdEndereco">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jlIdEndereco">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="ID Endere&#xe7;o"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
@@ -363,11 +384,6 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jlNomePerfil" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jtNomePerfil" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
                           <Component id="jlDescricao" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jtDescricao" max="32767" attributes="0"/>
@@ -379,7 +395,18 @@
                               <Component id="jbExcluirPerfil" alignment="0" max="32767" attributes="0"/>
                               <Component id="jbSelecionarPerfil" alignment="0" pref="103" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace min="0" pref="77" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="jlNomePerfil" min="-2" max="-2" attributes="0"/>
+                              <Component id="jlIdPerfil" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="jtNomePerfil" max="32767" attributes="0"/>
+                              <Component id="jtIdPerfil" min="-2" pref="136" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -389,7 +416,12 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jtIdPerfil" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jlIdPerfil" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jlNomePerfil" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jtNomePerfil" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -439,15 +471,31 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Alterar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbAlterarPerfilActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jbExcluirPerfil">
           <Properties>
             <Property name="text" type="java.lang.String" value="Excluir"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbExcluirPerfilActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jbSelecionarPerfil">
           <Properties>
             <Property name="text" type="java.lang.String" value="Selecionar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbSelecionarPerfilActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtIdPerfil">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jlIdPerfil">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="ID Perfil"/>
           </Properties>
         </Component>
       </SubComponents>

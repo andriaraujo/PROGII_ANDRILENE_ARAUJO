@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 /**
  *
  * @author Stefano
@@ -59,4 +60,34 @@ public class DaoUsuario {
         return listaParaRetorno;
     }
 
+  public void alterarUsuario(Usuario usuario) {
+        String sql = "update tb_usuario "
+                + "set nome=?, sobrenome=? "
+                + "where id_usuario=?";
+        try {
+            PreparedStatement preparacaoDaInstrucao = conexao.prepareStatement(sql);
+            preparacaoDaInstrucao.setString(1, usuario.getNome());
+            preparacaoDaInstrucao.setString(2, usuario.getSobrenome());
+            preparacaoDaInstrucao.setInt(3, usuario.getId_usuario());
+            preparacaoDaInstrucao.executeUpdate();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
+    }
+
+
+	public void excluirUsuario(int id) {
+        String sql = "delete from tb_usuario "
+                + "where id_usuario=?";
+        try {
+            PreparedStatement preparacaoDaInstrucao = conexao.prepareStatement(sql);
+            preparacaoDaInstrucao.setInt(1, id);
+            
+            preparacaoDaInstrucao.executeUpdate();
+            preparacaoDaInstrucao.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(DaoUsuario.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
